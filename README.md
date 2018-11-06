@@ -1,23 +1,27 @@
-# FAQ Bot �T���v�� (Tech Summit 2018)
+# FAQ Bot サンプル (Tech Summit 2018)
 
-���� Bot �A�v���P�[�V�����́A[Microsoft Bot Service](https://docs.microsoft.com/ja-jp/azure/bot-service/?view=azure-bot-service-4.0) ��œ��삷��A�v���P�[�V�����ł��B
 
-[QnA Maker](https://www.qnamaker.ai/) �𗘗p���� FAQ �{�b�g�ł��B
+この Bot アプリケーションは、[Microsoft Bot Service](https://docs.microsoft.com/ja-jp/azure/bot-service/?view=azure-bot-service-4.0) 上で動作するアプリケーションです。  
+[QnA Maker](https://www.qnamaker.ai/) を利用する FAQ ボットです。
 
-# Bot �A�v���P�[�V�������s�O�̏���
 
-- [Microsoft Azure �|�[�^���T�C�g](https://portal.azure.com/) �ŁA**Web App Bot (C#)** �̃T�[�r�X���쐬���܂��B
-- ���\�[�X�O���[�v�� QnA Maker ���\�[�X���쐬���܂��B
-- [QnA Maker](https://www.qnamaker.ai/) �ŁA�O�̎菇�ō쐬���� QnA Maker ���\�[�X�ɐڑ����� [�i���b�W�x�[�X���쐬](https://www.qnamaker.ai/Create) ���܂��B
-- �쐬�����i���b�W�x�[�X�� Knowledgebase Id, Host, Endpoint Key ���m�F���܂��B
-- �쐬���� Web �A�v���{�b�g �� [Application Id](https://apps.dev.microsoft.com/) ���m�F���܂��B
-- �쐬���� Bot �A�v���P�[�V������ Azure �ɔ��s����ꍇ�́A�쐬���� Web �A�v���{�b�g �� [Application Id](https://apps.dev.microsoft.com/) �ɑ΂��ĐV���� **�p�X���[�h(�A�v���P�[�V�����V�[�N���b�g)** ��ǉ����܂��B�p�X���[�h�͐ݒ莞�Ɉ�x�����\������Ȃ����߁A�������Ȃǂɓ\��t���Ă����܂��B
+Tech Summit 2018 [DA09 ユーザー インターフェースとしてのチャット ボット開発手法と Microsoft Bot Framework v4](https://www.microsoft.com/ja-jp/events/techsummit/2018/session.aspx#DA09) で使用しました。
 
-�Ȃ��ABot �A�v���P�[�V�����ł́AWeb �A�v���{�b�g�� **�A�v���P�[�V�����ݒ�** �� BotFileSecret ������Ă��܂��B  
-����ɂǂ������邽�߂ɂ́A�\�����[�V������  **appsettings.json** ����� **TsBasicBot.bot** �� BotFileSecret �̒l���R�s�[���Ȃ���΂Ȃ�܂���B  
-���̃T���v���ł͐ݒ���ȈՂɂ��邽�߂ɁABotFileSecret ���폜�i�󔒁j�ɂ��Ă��܂��BWeb �A�v���{�b�g�̃A�v���P�[�V�����ݒ��ʂł��ABotFileSecret �̃G���g�����폜���Ă��������B
 
-# �Q�l���
+# Bot アプリケーション実行前の準備
+
+- [Microsoft Azure ポータルサイト](https://portal.azure.com/) で、**Web App Bot (C#)** のサービスを作成します。
+- リソースグループに QnA Maker リソースを作成します。
+- [QnA Maker](https://www.qnamaker.ai/) で、前の手順で作成した QnA Maker リソースに接続する [ナレッジベースを作成](https://www.qnamaker.ai/Create) します。
+- 作成したナレッジベースの Knowledgebase Id, Host, Endpoint Key を確認します。
+- 作成した Web アプリボット の [Application Id](https://apps.dev.microsoft.com/) を確認します。
+- 作成した Bot アプリケーションを Azure に発行する場合は、作成した Web アプリボット の [Application Id](https://apps.dev.microsoft.com/) に対して新しい **パスワード(アプリケーションシークレット)** を追加します。パスワードは設定時に一度しか表示されないため、メモ帳などに貼り付けておきます。
+
+なお、Bot アプリケーションでは、Web アプリボットの **アプリケーション設定** で BotFileSecret がされています。  
+正常にどうさせるためには、ソリューションの  **appsettings.json** および **TsBasicBot.bot** に BotFileSecret の値をコピーしなければなりません。  
+このサンプルでは設定を簡易にするために、BotFileSecret を削除（空白）にしています。Web アプリボットのアプリケーション設定画面でも、BotFileSecret のエントリを削除してください。
+
+# 参考情報
 - [Bot Framework Documentation](https://docs.botframework.com)
 - [Bot basics](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
 - [QnA Maker](https://qnamaker.ai)
